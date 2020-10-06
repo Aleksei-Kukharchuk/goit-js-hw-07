@@ -1,0 +1,30 @@
+#gallery {
+  display: flex;
+}
+
+.list__item {
+  list-style-type: none;
+  background-size: cover;
+  margin-right: 30px;
+}
+
+.kist__item:last-child {
+  margin-right: 0px;
+}
+
+.list__img {
+  width: 500px;
+  height: calc(500px * 0.6);
+}
+
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
