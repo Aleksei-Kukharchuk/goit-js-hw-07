@@ -13,5 +13,7 @@ const refs = {
 refs.input.addEventListener("input", onInputCHange);
 
 function onInputCHange(event) {
-  refs.nameLabel.textContent = event.currentTarget.value;
+  return event.currentTarget.value.length > 0
+    ? (refs.nameLabel.textContent = event.currentTarget.value)
+    : (refs.nameLabel.textContent = `незнакомец`);
 }

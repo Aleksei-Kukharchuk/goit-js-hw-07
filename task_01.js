@@ -1,5 +1,7 @@
 const elCategorie = document.querySelectorAll("#categories .item");
 
+console.log(`В списке ${elCategorie.length} категории`);
+
 elCategorie.forEach((el) => {
   const categroieName = el.querySelector("h2");
   console.log(`Категория: ${categroieName.textContent}`);

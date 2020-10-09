@@ -10,12 +10,11 @@
  */
 
 const input = document.querySelector("#validation-input");
-const length = document.querySelector('[data-length="6"]');
 
 input.addEventListener("change", onInputCheck);
 
 function onInputCheck(inputText) {
-  inputText.currentTarget.value.length >= length.dataset.length
+  inputText.currentTarget.value.length >= input.dataset.length
     ? input.classList.toggle("invalid")
     : input.classList.add("valid", "invalid");
 }
