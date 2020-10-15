@@ -5,12 +5,12 @@ let acc = 0;
 
 const increment = () => {
   acc = acc + 1;
-  return (counterValue.textContent = acc);
+  counterValue.textContent = acc;
 };
 
 const decrement = () => {
   acc = acc - 1;
-  return (counterValue.textContent = acc);
+  counterValue.textContent = acc;
 };
 
 incrementBtn.addEventListener("click", increment);
