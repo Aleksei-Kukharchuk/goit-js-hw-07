@@ -14,7 +14,9 @@ const input = document.querySelector("#validation-input");
 input.addEventListener("change", onInputCheck);
 
 function onInputCheck(inputText) {
-  inputText.currentTarget.value.length >= input.dataset.length
+  console.log(inputText.currentTarget.value.length);
+  console.log(input.dataset.length);
+  inputText.currentTarget.value.length == input.dataset.length
     ? input.classList.toggle("invalid")
     : input.classList.add("valid", "invalid");
 }
