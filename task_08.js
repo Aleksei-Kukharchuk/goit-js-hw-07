@@ -21,40 +21,33 @@
 const refs = {
   render: document.querySelector("[data-action='render']"),
   destroy: document.querySelector("[data-action='destroy']"),
-  collection: document.querySelector("#boxes"),
+  collection: document.querySelector("#boxes")
 };
 
 refs.render.addEventListener("click", getAmount);
 refs.destroy.addEventListener("click", destroyBoxes);
 
 function getAmount() {
-  let amount = +document.querySelector("#controls input").value;
+  const amount = +document.querySelector("#controls input").value;
   createBoxes(amount);
 }
 
 function createBoxes(amount) {
-  let basicSize = 30;
-  let elements = new Array(amount);
-  elements.map((element) => {
-    let size = basicSize + elements.indexOf[element] * 10;
-    let div = document.createElement("div");
-    div.style.cssText = `width: ${size}px; height: ${size}px; background-color: rgba(${random()}, ${random()}, ${random()})`;
+  const elements = Array.from({ length: amount }, () => undefined)
+  const boxes = elements.map((element, index) => {
+    const basicSize = 30;
+    let size = basicSize + index * 10;
+    return element = `<div style='width: ${size}px; height: ${size}px; background-color: rgba( ${random()} , ${random()} , ${random()} )'></div>`;
   });
+  refs.collection.insertAdjacentHTML('afterbegin', boxes.join(''))
+};
 
-  /* let fragment = document.createDocumentFragment();
-  for (let i = 0; i <= amount; i++) {
-    let size = basicSize + i * 10;
-    let div = document.createElement("div");
-    div.style.cssText = `width: ${size}px; height: ${size}px; background-color: rgba(${random()}, ${random()}, ${random()})`;
-    fragment.appendChild(div);
-  } */
-  /* refs.collection.appendChild(...elements); */
-}
-
+/* Очитска коллекции */
 function destroyBoxes() {
   refs.collection.innerHTML = " ";
 }
 
+/* Функция рандомного выбора цветов */
 function random() {
   return Math.floor(Math.random() * 256);
 }
